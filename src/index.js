@@ -188,14 +188,15 @@ Object.assign(Utils.prototype, {
             sourceLayer = l['source-layer'];
         }
         let featureId;
-        function setHoverState(state) {
+
+        const setHoverState = (state) => {
             if (featureId) {
                 this.map.setFeatureState(
                     { source, sourceLayer, id: featureId },
                     { hover: state }
                 );
             }
-        }
+        };
 
         const mousemove = e => {
             const f = e.features[0];
